@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="CIDemo" basedir="." default="main">
+<project name="CIDemo" basedir="." default="all">
 
     <target name="all" depends="createzip,clean">
         <echo message="Running all targets." />
