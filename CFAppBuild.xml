@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="CIDemo" basedir=".">
+<project name="CIDemo" basedir="." default="main">
+
+    <target name="all" depends="createzip,clean">
+        <echo message="Running all targets." />
+    </target>
 
     <!-- Set up the target directories and names for the package and testing. -->
     <target name="init">
@@ -8,17 +12,17 @@
     </target>
 
     <!-- Copy files to a clean build directory. -->
-    <target name="build" src=".">
+    <target name="build" depends="init">
         <echo message="Copying source code to clean build directory." />
     </target>
 
     <!-- Create ZIP release archive to deploy to testing environment. -->
-    <target name="createzip">
+    <target name="createzip" depends="build">
         <echo message="Creating ZIP release archive." />
     </target>
 
     <!-- Clean up. Remove all temporary directories. -->
-    <target name="clean">
+    <target name="clean" depends="build">
         <echo message="Cleaning up." />
     </target>
 </project>
