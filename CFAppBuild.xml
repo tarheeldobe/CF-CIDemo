@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="CIDemo" basedir=".">
+
+    <!-- Set up the target directories and names for the package and testing. -->
+    <target name="init">
+        <echo message="[INIT] **********" />
+    </target>
+
+    <!-- Copy files to a clean build directory. -->
+    <target name="build" src=".">
+        <echo message="Copying source code to clean build directory." />
+    </target>
+
+    <!-- Create ZIP release archive to deploy to testing environment. -->
+    <target name="createzip">
+        <echo message="Creating ZIP release archive." />
+    </target>
+
+    <!-- Clean up. Remove all temporary directories. -->
+    <target name="clean">
+        <echo message="Cleaning up." />
+    </target>
+</project>
