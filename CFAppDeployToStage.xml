@@ -8,7 +8,7 @@
     <!-- Set global properties for this build -->
     <property name="src" location="."/>
     <property name="dist" location="dist"/>
-    <property name="deployLocation" location="\\LAPTOP-T7BBN7V8\Users\ljcar\Documents\CIDemo-StageDeploy" />
+    <property name="deployLocation" location="\\\\LAPTOP-T7BBN7V8\Users\ljcar\Documents\CIDemo-StageDeploy" />
 
     <target name="deploy" depends="">
         <echo message="Running deployment." />
