@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <project name="CIDemo" basedir="." default="all">
+    <description>
+        This buildfile is used to build the CIDemo project.
+    </description>
+
+    <!-- Set global properties for this build -->
+    <property name="src" location="."/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
 
     <target name="all" depends="createzip,clean">
         <echo message="Running all targets." />
@@ -9,20 +17,33 @@
     <!-- Set up the target directories and names for the package and testing. -->
     <target name="init">
         <echo message="[INIT] **********" />
+            <!-- Create the time stamp -->
+        <tstamp/>
     </target>
 
     <!-- Copy files to a clean build directory. -->
     <target name="build" depends="init">
         <echo message="Copying source code to clean build directory." />
+        <copy todir="${build}">
+            <fileset dir=".">
+                <exclude name="**/*.gitignore" />
+                <exclude name="**/dist/**" />
+                <exclude name="CFAppBuild.xml" />
+                <exclude name="CFAppDeployToStage.xml" />
+                <exclude name="DontIncludeThisFileInBuild.txt" />
+            </fileset>
+        </copy>
     </target>
 
     <!-- Create ZIP release archive to deploy to testing environment. -->
     <target name="createzip" depends="build">
         <echo message="Creating ZIP release archive." />
+          <zip destfile="${dist}/CIDemo-Release-${DSTAMP}-${TSTAMP}.zip" basedir="${build}" />         
     </target>
 
     <!-- Clean up. Remove all temporary directories. -->
     <target name="clean" depends="build">
         <echo message="Cleaning up." />
+        <delete dir="build"/>
     </target>
 </project>

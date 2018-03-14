@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="CIDemo-DeployToStage" basedir="." default="deploy">
+    <description>
+        This buildfile is used to deploy the CIDemo ZIP release to staging server.
+    </description>
+
+    <!-- Set global properties for this build -->
+    <property name="src" location="."/>
+    <property name="dist" location="dist"/>
+    <property name="deployLocation" location="C:\Users\ljcar\Documents\CIDemo-StageDeploy\" />
+
+    <target name="deploy" depends="">
+        <echo message="Running deployment." />
+        <!-- Copy zip release to deploy location. -->
+        <copy todir="${deployLocation}" preserveLastModified="true">
+            <fileset dir="${dist}">
+                <include name="**/*.zip" />
+            </fileset>
+        </copy>
+    </target>
+
+</project>
