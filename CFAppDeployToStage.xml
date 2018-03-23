@@ -7,7 +7,7 @@
 
     <!-- Set global properties for this build -->
     <property name="src" location="."/>
-    <property name="dist" location="artifacts/dist"/>
+    <property name="dist" location="/temp/artifacts/dist"/>
     <property name="deployLocation" location="/var/lib/artifacts" />
 
     <target name="deploy" depends="">
