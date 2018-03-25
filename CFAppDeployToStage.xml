@@ -6,10 +6,9 @@
     </description>
 
     <!-- Set global properties for this build -->
-    <property name="src" location="."/>
-    <property name="dist" location="/temp/artifacts/dist"/>
-    <property name="deployLocation" location="/var/lib/artifacts" />
-
+    <property name="dist" location="."/>
+    <property name="deployLocation="dist2">
+    
     <target name="deploy" depends="">
         <echo message="Running deployment." />
         <!-- Copy zip release to deploy location. -->
