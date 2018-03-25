@@ -7,7 +7,7 @@
 
     <!-- Set global properties for this build -->
     <property name="dist" location="."/>
-    <property name="deployLocation="dist2">
+    <property name="deployLocation" location="dist2" />
     
     <target name="deploy" depends="">
         <echo message="Running deployment." />
