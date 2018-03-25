@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="CIDemo-DeployToStage" basedir="." default="deploy">
+<project name="CIDemo-DeployToStage" basedir="." default="all">
     <description>
         This buildfile is used to deploy the CIDemo ZIP release to "staging" server.  This script assumes that the target deployment location
         already exists.
@@ -22,7 +22,7 @@
 
     <target name="extract" depends="deploy">
         <echo message="Extracting files to destination target."/>
-        <unzip src="${deployLocation}/${dist}/*.zip" dest="\.." overwrite="true">
+        <unzip src="${deployLocation}/${dist}/*.zip" dest="\.." overwrite="true"/>
     </target>
 
 </project>
