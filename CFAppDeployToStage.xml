@@ -2,12 +2,13 @@
 
 <project name="CIDemo-DeployToStage" basedir="." default="deploy">
     <description>
-        This buildfile is used to deploy the CIDemo ZIP release to staging server.
+        This buildfile is used to deploy the CIDemo ZIP release to staging server.  This script assumes that the target deployment location
+        already exists.
     </description>
 
     <!-- Set global properties for this build -->
     <property name="dist" location="."/>
-    <property name="deployLocation" location="/var/lib/deploy" />
+    <property name="deployLocation" location="/vagrant/deploy" />
     
     <target name="deploy" depends="">
         <echo message="Running deployment." />
