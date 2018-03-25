@@ -2,7 +2,7 @@
 
 <project name="CIDemo-DeployToStage" basedir="." default="deploy">
     <description>
-        This buildfile is used to deploy the CIDemo ZIP release to staging server.  This script assumes that the target deployment location
+        This buildfile is used to deploy the CIDemo ZIP release to "staging" server.  This script assumes that the target deployment location
         already exists.
     </description>
 
@@ -14,9 +14,7 @@
         <echo message="Running deployment." />
         <!-- Copy zip release to deploy location. -->
         <copy todir="${deployLocation}" preserveLastModified="true">
-            <fileset dir="${dist}">
-                <include name="**/*.zip" />
-            </fileset>
+            <fileset name="${dist}/*.zip" />
         </copy>
     </target>
 
