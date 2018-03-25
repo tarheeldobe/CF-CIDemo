@@ -17,14 +17,15 @@
         <!-- Copy zip release to deploy location. -->
         <copy todir="${deployLocation}" preserveLastModified="true">
             <fileset dir="${dist}">
-                <include name="*.zip" />
+                <include name="**/*.zip" />
             </fileset>
         </copy>
     </target>
-
+    <!-->
     <target name="extract" depends="deploy">
         <echo message="Extracting files to destination target."/>
-        <unzip src="${deployLocation}/${dist}/*.zip" dest="\.." overwrite="true"/>
+        <unzip src="${deployLocation}/*.zip" dest="\.." overwrite="true"/>
     </target>
+    -->
 
 </project>
