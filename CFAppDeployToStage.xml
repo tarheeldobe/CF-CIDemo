@@ -9,6 +9,8 @@
     <!-- Set global properties for this build -->
     <property name="dist" location="."/>
     <property name="deployLocation" location="/vagrant/deploy" />
+
+    <target name="all" depends="deploy,extract" />
     
     <target name="deploy" depends="">
         <echo message="Running deployment." />
@@ -16,6 +18,11 @@
         <copy todir="${deployLocation}" preserveLastModified="true">
             <fileset name="${dist}/*.zip" />
         </copy>
+    </target>
+
+    <target name="extract" depends="deploy">
+        <echo message="Extracting files to destination target."/>
+        <unzip src="${deployLocation}/${dist}/*.zip" dest="\.." overwrite="true">
     </target>
 
 </project>
