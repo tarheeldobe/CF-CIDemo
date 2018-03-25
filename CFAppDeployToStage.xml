@@ -21,11 +21,11 @@
             </fileset>
         </copy>
     </target>
-    <!-->
+    
     <target name="extract" depends="deploy">
         <echo message="Extracting files to destination target."/>
-        <unzip src="${deployLocation}/*.zip" dest="\.." overwrite="true"/>
+   <!-->     <unzip src="${deployLocation}/*.zip" dest="\.." overwrite="true"/> -->
     </target>
-    -->
+   
 
 </project>
