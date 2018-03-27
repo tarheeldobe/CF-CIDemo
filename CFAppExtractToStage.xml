@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="CIDemo-ExtractToStage" basedir="." default="extract">
+    <description>
+        This buildfile is used to deploy the CIDemo ZIP release to "staging" server.  This script assumes that the target deployment location
+        already exists.
+    </description>
+
+    <property name="deployLocation" value="C:/Programming Projects/ContinuousIntegrationDemo/GoCD-workshop-setup/deploy/dist" />
+    <property name="stagingLocation" value="C:/Programming Projects/ContinuousIntegrationDemo/GoCD-workshop-setup/deploy/" />
+    
+    <target name="extract" depends="">
+        <echo message="Extracting files to destination target."/>
+        <unzip dest="${stagingLocation}" overwrite="true">
+            <fileset dir="${deployLocation}">
+                <include name="*.zip" />
+            </fileset>
+        </unzip>
+    </target>
+   
+
+</project>
